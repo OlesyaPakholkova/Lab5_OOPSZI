@@ -18,7 +18,9 @@ Stack::Stack(Stack &&move)
 Stack::~Stack()
 {
 	delete[] arr;
-}Stack::Stack(const Stack &other)
+}
+
+Stack::Stack(const Stack &other)
 {
 	arr = new int[other.count];
 	count = other.count;
@@ -26,7 +28,7 @@ Stack::~Stack()
 	{
 		arr[i] = other.arr[i];
 	}
-}
+}
 Stack &Stack::operator=(const Stack &other)
 {
 	if (this == &other)
@@ -39,7 +41,9 @@ Stack &Stack::operator=(const Stack &other)
 	for (int i = 0; i < count; ++i)
 	{
 		arr[i] = other.arr[i];
-	}	return *this;}
+	}
+	return *this;
+}
 
 ostream &operator<<(ostream &stream, const Stack &value)
 {
